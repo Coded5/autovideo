@@ -8,7 +8,8 @@ An video generator using OpenAI's whisper to transcribe audio and getting image 
 ## Quickstart
 
 ### Prerequisite
-Must have ffmpeg and python installed.
+* Must have ffmpeg and python installed.
+* Using on linux is recommened.
 
 ### Installation
 
@@ -20,14 +21,15 @@ $ pip install -r requirements.txt
 
 ### Setup
 
-Get pexel api key and put it in your enviroment variables or create .env file or put it command line argument
+Get pexels API key from [here](https://www.pexels.com/api/) and put it in your enviroment variables or create .env file or put it command line argument.
 
 
 ### Usage
 
 ```
-$python main.py --input <path_to_audio> --output <path_to_output>
+$ python main.py --input <path_to_audio> --output <path_to_output>
 ```
+Note: Pexels API limit request rate at 200 requests per hour and 20K request per month.
 
 ### Settings
 * <mark>--model</mark>  Select which whisper AI model to use (defaulted at "medium.en")

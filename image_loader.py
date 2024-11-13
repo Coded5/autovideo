@@ -47,7 +47,7 @@ def get_image_urls(words: list[tuple[float, str]]) -> list[tuple[float, str]]:
             continue 
 
         #Get random but predictable image
-        image_url = response.json()['photos'][int(time * 1000) % 8]['src']['original']
+        image_url = response.json()['photos'][int(time * 1000) % 8]['src']['medium']
         image_sources.append((time, image_url)) 
 
     return image_sources
