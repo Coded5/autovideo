@@ -1,11 +1,14 @@
 # Autovideo
 
-## A simple video generator from audio.
+### This repository is for Chulalongkorn University COM PROG (2190101) Course.
+
+## Description
+An video generator using OpenAI's whisper to transcribe audio and getting image from pexel and using ffmpeg to put everything together.
 
 ## Quickstart
 
 ### Prerequisite
-Must have ffmpeg installed
+Must have ffmpeg and python installed.
 
 ### Installation
 
@@ -27,5 +30,5 @@ $python main.py --input <path_to_audio> --output <path_to_output>
 ```
 
 ### Settings
-* ==--model==  Select which whisper AI model to use (defaulted at "medium.en")
-* ==--apikey== Attach api key for pexel use if not in enviroment variable
+* <mark>--model</mark>  Select which whisper AI model to use (defaulted at "medium.en")
+* <mark>--apikey</mark> Attach api key for pexel use if not in enviroment variable
