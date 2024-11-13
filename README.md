@@ -27,5 +27,5 @@ $python main.py --input <path_to_audio> --output <path_to_output>
 ```
 
 ### Settings
-* --model  :Select which whisper AI model to use (defaulted at "medium.en")
-* --apikey :Attach api key for pexel use if not in enviroment variable
+* ==--model==  Select which whisper AI model to use (defaulted at "medium.en")
+* ==--apikey== Attach api key for pexel use if not in enviroment variable
