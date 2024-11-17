@@ -33,7 +33,7 @@ if __name__ == '__main__':
         model = args.model
 
     nltk.download('punkt_tab')
-    nltk.download('averaged_perceptron_tagger')
+    nltk.download('averaged_perceptron_tagger_eng')
 
     if os.path.exists('./temp/') and os.path.isdir('./temp/'):
         try:
