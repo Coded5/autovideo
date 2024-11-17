@@ -42,7 +42,7 @@ if __name__ == '__main__':
             pass
 
     print("Transcribing Audio...")
-    transcript = audio_transcriber.transcribe_audio_precise(input_path)
+    transcript = audio_transcriber.transcribe_audio_precise(input_path, model_type=model)
 
     print("Gettings URL")
     picture_list = script_reader.create_picture_list(transcript)

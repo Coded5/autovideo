@@ -8,9 +8,8 @@ def create_video(
     output_path: str
 ):
 
-    #runic indexing wtf is this is
-    time_start = transcript[0][1][0][0] #transcript.words[0].start
-    time_end   = transcript[-1][1][-1][1] #transcript.words[-1].end
+    time_start = transcript[0][1][0][0]
+    time_end   = transcript[-1][1][-1][1]
 
     duration = time_end - time_start
     end_at = duration + 0.2
@@ -40,8 +39,6 @@ def create_video(
             .filter('scale', IMG_WIDTH, IMG_HEIGHT)
         )
 
-        # print(pic)
-
         start = float(pic.split('.')[0]) / 1000
         end   = float(pictures[i + 1].split('.')[0]) / 1000 if i+1 < len(pictures) else (end_at - 0.2)
 
@@ -49,11 +46,6 @@ def create_video(
             ffmpeg
             .filter([stream, overlay], 'overlay', enable=f'between(t, {start}, {end})', x=POS_X, y=POS_Y)
         )
-
-        # stream = (
-        #     ffmpeg
-        #     .overlay(stream, overlay, x=POS_X, y=POS_Y, enable=f'between(t, {start}, {end})')
-        # )
 
     for text, words in transcript: 
         start = words[0][0]
@@ -69,7 +61,15 @@ def create_video(
             
     audio = ffmpeg.input(audio_path)
 
-    ffmpeg.output(stream, audio, output_path).run(overwrite_output=True, capture_stdout=True, capture_stderr=True)
+    ffmpeg.output(
+        stream, 
+        audio, 
+        output_path
+    ).run(
+        overwrite_output=True, 
+        capture_stdout=True, 
+        capture_stderr=True
+    )
 
 if __name__ == '__main__':
     import audio_transcriber 

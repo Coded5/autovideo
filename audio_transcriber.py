@@ -16,8 +16,8 @@ def transcribe_audio(audio_path) -> list[tuple[int, int, str]]:
 
     return transcript
 
-def transcribe_audio_precise(audio_path) -> list[tuple[str, list[tuple[float, float, str]]]]:
-    model = whisper.load_model("medium.en")
+def transcribe_audio_precise(audio_path: str, model_type: str) -> list[tuple[str, list[tuple[float, float, str]]]]:
+    model = whisper.load_model(model_type)
     raw_transcript: dict = model.transcribe(audio_path, word_timestamps=True)
 
     transcript = []
@@ -39,9 +39,3 @@ def transcribe_audio_precise(audio_path) -> list[tuple[str, list[tuple[float, fl
         transcript.append((cleaned_text, cleaned_words))
 
     return transcript
-
-# if __name__ == '__main__':
-#     # print(transcribe_audio('./test/benefit.mp4'))
-#     print(transcribe_audio_precise('./test/benefit.mp4'))
-#
-

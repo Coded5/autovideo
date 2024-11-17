@@ -9,7 +9,8 @@ An video generator using OpenAI's whisper to transcribe audio and getting image 
 
 ### Prerequisite
 * Must have ffmpeg and python installed.
-* Using on linux is recommened.
+* Using on linux is recommended.
+* Using Nvidia's GPU is recommended.
 
 ### Installation
 
